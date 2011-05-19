@@ -1,0 +1,6 @@
+core = "6.x"
+name = "Registration Destination"
+description = "Sends user to certain page after registration"
+package = "Registration"
+project = "reg_dest"
+version = "6.x-0.1-dev"
