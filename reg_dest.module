@@ -7,7 +7,7 @@ function reg_dest_menu() {
   $items = array();
   
   $items['thank-you'] = array(
-    'title' => 'Thank You for Registering', 
+    'title' => 'Registration Complete',
     'page callback' => 'reg_dest_pagecontent', 
     'access arguments' => array('access content'), 
     'type' => MENU_CALLBACK,
@@ -17,7 +17,8 @@ function reg_dest_menu() {
 }
 
 function reg_dest_pagecontent() {
-  return t('Thank you for Registering');
+  drupal_add_css(drupal_get_path('module', 'reg_dest').'/reg_dest.css');
+  return t('<strong>Thank you for registering with Harrick Scientific Products, Inc.</strong><p>Please check your email for login and password  instructions.</p>');
 }
 
 /**
@@ -26,7 +27,7 @@ function reg_dest_pagecontent() {
 function reg_dest_form_alter(&$form, $form_state, $form_id) {
   switch ($form_id) {
     case 'user_register':
-        $form['#redirect'] = 'thank-you';
-      break;
+      $form['#redirect'] = 'thank-you';
+    break;
   }
 }
